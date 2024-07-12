@@ -4,6 +4,7 @@ import { Inter as FontSans } from 'next/font/google'
 
 import '@styles/globals.css'
 
+import { cn } from '@lib/utils'
 import { name } from '@common/data'
 import type { RootLayoutProps } from '@common/interfaces'
 
@@ -22,7 +23,12 @@ export const metadata : Metadata = {
 
 const RootLayout : FC<RootLayoutProps> = ({ children }) => (
   <html lang='en'>
-    <body className={ fontSans.variable }>
+    <body
+      className={ cn(
+        'min-h-dvh bg-background font-sans antialiased',
+        fontSans.variable
+      ) }
+    >
       {children}
     </body>
   </html>
