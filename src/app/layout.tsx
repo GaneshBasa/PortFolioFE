@@ -7,6 +7,7 @@ import '@styles/globals.css'
 import { cn } from '@lib/utils'
 import { name } from '@common/data'
 import type { RootLayoutProps } from '@common/interfaces'
+import { ThemeProvider } from '@context/theme-provider'
 
 
 const fontSans = FontSans({
@@ -22,14 +23,21 @@ export const metadata : Metadata = {
 
 
 const RootLayout : FC<RootLayoutProps> = ({ children }) => (
-  <html lang='en'>
+  <html lang='en' suppressHydrationWarning>
     <body
       className={ cn(
         'min-h-dvh bg-background font-sans antialiased',
         fontSans.variable
       ) }
     >
-      {children}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
     </body>
   </html>
 )

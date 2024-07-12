@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { Button } from '@ui/button'
+import { ModeToggle } from '@components/mode-toggle'
 
 
 const RootPage : FC = () => (
@@ -12,6 +13,9 @@ const RootPage : FC = () => (
       <Button className='m-5'>
         Click Me!
       </Button>
+      <div>
+        <ModeToggle />
+      </div>
     </div>
   </main>
 )

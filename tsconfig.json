@@ -23,6 +23,7 @@
       "@app/*": ["app/*"],
       "@common/*": ["common/*"],
       "@components/*": ["components/*"],
+      "@context/*": ["context/*"],
       "@ui/*": ["components/ui/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
