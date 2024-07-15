@@ -23,7 +23,7 @@ export const ModeToggle : FC = () => {
       <DropdownMenuTrigger asChild>
 
         {/* NOTE: Can Change Variant & Other Params here */}
-        <Button variant='outline' size='icon'>
+        <Button variant='outline' size='icon' className='bg-transparent'>
 
           <Sun className='absolute h-[1.2rem] w-[1.2rem] transition-all scale-100 dark:scale-0' />
 
