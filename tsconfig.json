@@ -23,8 +23,9 @@
       "@app/*": ["app/*"],
       "@common/*": ["common/*"],
       "@components/*": ["components/*"],
-      "@context/*": ["context/*"],
+      "@nav/*": ["components/nav/*"],
       "@ui/*": ["components/ui/*"],
+      "@context/*": ["context/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
     }
