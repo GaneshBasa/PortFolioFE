@@ -21,7 +21,7 @@ const fontSans = FontSans({
 
 export const metadata : Metadata = {
   title: name,
-  description: `${name}\' Portfolio`,
+  description: `${ name }\'${ name.endsWith( 's' ) ? '' : 's' } Portfolio`,
 }
 
 
