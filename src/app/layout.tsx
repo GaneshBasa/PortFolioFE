@@ -8,6 +8,9 @@ import { cn } from '@lib/utils'
 import { name } from '@common/data'
 import type { RootLayoutProps } from '@common/interfaces'
 import { ThemeProvider } from '@context/theme-provider'
+import { AppStateProvider } from '@context/app-state-provider'
+import SiteHeader from '@components/site-header'
+// import SiteFooter from '@components/site-footer'
 
 
 const fontSans = FontSans({
@@ -26,17 +29,27 @@ const RootLayout : FC<RootLayoutProps> = ({ children }) => (
   <html lang='en' suppressHydrationWarning>
     <body
       className={ cn(
-        'min-h-dvh bg-background font-sans antialiased',
+        'min-h-screen bg-background font-sans antialiased',
         fontSans.variable
       ) }
     >
       <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
+        attribute='class'
+        defaultTheme='system'
         enableSystem
         disableTransitionOnChange
       >
-        {children}
+        <AppStateProvider>
+
+          <SiteHeader />
+
+          <main className='min-h-screen flex-1'>
+            {children}
+          </main>
+
+          {/* <SiteFooter /> */}
+
+        </AppStateProvider>
       </ThemeProvider>
     </body>
   </html>
