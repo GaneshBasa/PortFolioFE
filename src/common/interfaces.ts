@@ -1,14 +1,4 @@
-import { PropsWithChildren } from 'react'
-
-
-export interface RootLayoutProps extends PropsWithChildren {}
-
-
-export interface NavLinkProps extends PropsWithChildren {
-  target: string
-  active?: boolean
-  className?: string
-}
+import { PropsWithChildren, ComponentProps } from 'react'
 
 
 export interface BaseAppState {
@@ -19,4 +9,14 @@ export interface BaseAppState {
 export interface AppState {
   appState: BaseAppState
   updateState: ( newAppState: Partial<BaseAppState> ) => void
+}
+
+
+export interface RootLayoutProps extends PropsWithChildren {}
+
+
+export interface NavLinkProps extends PropsWithChildren {
+  target: string
+  active?: boolean
+  className?: string
 }
