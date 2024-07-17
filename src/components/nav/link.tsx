@@ -1,8 +1,7 @@
 import { FC, MouseEventHandler, useContext } from 'react'
 import Link from 'next/link'
 
-import { VercelLogoIcon } from '@radix-ui/react-icons'
-
+import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
 import { name, sections } from '@common/data'
 import type { NavLinkProps } from '@common/interfaces'
 import { AppStateContext } from '@context/app-state-provider'
@@ -66,9 +65,12 @@ export const NavLinks : FC = () => {
 export const NavLogo : FC = () => (
   <NavLink
     target='/'
-    className='flex items-center max-w-fit md:space-x-2 md:mr-4 lg:mr-6'
+    className='flex items-center max-w-fit space-x-2 md:mr-4 lg:mr-6'
   >
-    <VercelLogoIcon className='mr-2 transition-all' />
+    <Avatar>
+      <AvatarImage src='https://github.com/GaneshBasa.png' />
+      <AvatarFallback>GB</AvatarFallback>
+    </Avatar>
     <span className='font-bold md:hidden lg:inline-block' >
       { name }
     </span>
