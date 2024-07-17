@@ -52,7 +52,7 @@ const RootPage : FC = () => {
   return (
     <>
 
-      <section className='flex min-h-screen bg-gradient-to-b from-background to-primary-foreground' ref={ addSectionRef }>
+      <section className='flex min-h-screen' ref={ addSectionRef }>
         <div className='text-center m-auto'>
           <h1 className='text-5xl font-extrabold'>
             Hello, World!
@@ -66,13 +66,7 @@ const RootPage : FC = () => {
             key={ index }
             id={ section.toLowerCase() }
             ref={ addSectionRef }
-            className={
-              index % 2 == 0
-              ?
-              'flex min-h-screen bg-gradient-to-b from-primary-foreground to-background'
-              :
-              'flex min-h-screen bg-gradient-to-b from-background to-primary-foreground'
-            }
+            className='flex min-h-screen'
           >
             <div className='text-center m-auto'>
               <h1 className='text-5xl font-extrabold'>
