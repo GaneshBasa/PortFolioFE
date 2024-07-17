@@ -17,19 +17,31 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./src/",
     "paths": {
-      "@src/*": ["*"],
-      "@app/*": ["app/*"],
-      "@common/*": ["common/*"],
-      "@components/*": ["components/*"],
-      "@nav/*": ["components/nav/*"],
-      "@ui/*": ["components/ui/*"],
-      "@context/*": ["context/*"],
-      "@lib/*": ["lib/*"],
-      "@styles/*": ["styles/*"],
+      "@assets/*": ["./public/assets/*"],
+      "@public/*": ["./public/*"],
+
+      "@app/*": ["./src/app/*"],
+      "@common/*": ["./src/common/*"],
+
+      "@nav/*": ["./src/components/nav/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      
+      "@components/*": ["./src/components/*"],
+
+      "@context/*": ["./src/context/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@styles/*": ["./src/styles/*"],
+
+      "@src/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "global.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"],
+  "exclude": [ "node_modules" ],
+  "typeRoots": [ "global.d.ts" ]
 }
