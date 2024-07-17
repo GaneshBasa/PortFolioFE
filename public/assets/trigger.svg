@@ -1,0 +1,20 @@
+
+<svg viewBox='0 0 24 24' stroke='currentColor' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'>
+
+  <path d='M 3 5 H 11' />
+
+  <path d='M 3 12 H 16'>
+
+    <animate id='seq_1' attributeName='d' begin='0s; seq_4.end' dur='5s' />
+
+    <animate id='seq_2' attributeName='d' begin='seq_1.end' dur='125ms' to='M 3 9 H 13' fill='freeze' />
+
+    <animate id='seq_3' attributeName='d' begin='seq_2.end' dur='125ms' to='M 3 15 H 19' fill='freeze' />
+
+    <animate id='seq_4' attributeName='d' begin='seq_3.end' dur='125ms' to='M 3 12 H 16' fill='freeze' />
+
+  </path>
+
+  <path d='M 3 19 H 21' />
+
+</svg>
