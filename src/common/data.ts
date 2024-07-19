@@ -2,9 +2,16 @@
 export const name = 'Ganesh Basa'
 
 export const sections = [
-  'One',
-  'Two',
-  'Three',
-  'Four',
-  'Five',
+  'Hero',
+  'About',
+  'Resume',
+  'Approach',
+  'Projects',
+  'Skills',
+  'Technologies',
+  'Testimonials',
+  'Education',
+  'Work Experience',
+  'Contact',
+  'Footer'
 ]
