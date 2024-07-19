@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Minus, Plus } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Bar, BarChart, ResponsiveContainer } from "recharts"
+import * as React from 'react'
+import { Minus, Plus } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { Bar, BarChart, ResponsiveContainer } from 'recharts'
 
-import { useConfig } from "@hooks/use-config"
-import { Button } from "@components/ui/button"
+import { useConfig } from '@hooks/use-config'
+import { Button } from '@components/ui/button'
 import {
   Card,
   CardContent,
@@ -14,8 +14,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@components/ui/card"
-import { themes } from "@common/themes"
+} from '@components/ui/card'
+import { themes } from '@common/themes'
 
 const data = [
   {
@@ -72,50 +72,50 @@ export function CardsActivityGoal() {
 
   return (
     <Card>
-      <CardHeader className="pb-4">
-        <CardTitle className="text-base">Move Goal</CardTitle>
+      <CardHeader className='pb-4'>
+        <CardTitle className='text-base'>Move Goal</CardTitle>
         <CardDescription>Set your daily activity goal.</CardDescription>
       </CardHeader>
-      <CardContent className="pb-2">
-        <div className="flex items-center justify-center space-x-2">
+      <CardContent className='pb-2'>
+        <div className='flex items-center justify-center space-x-2'>
           <Button
-            variant="outline"
-            size="icon"
-            className="h-8 w-8 shrink-0 rounded-full"
+            variant='outline'
+            size='icon'
+            className='h-8 w-8 shrink-0 rounded-full'
             onClick={() => onClick(-10)}
             disabled={goal <= 200}
           >
-            <Minus className="h-4 w-4" />
-            <span className="sr-only">Decrease</span>
+            <Minus className='h-4 w-4' />
+            <span className='sr-only'>Decrease</span>
           </Button>
-          <div className="flex-1 text-center">
-            <div className="text-5xl font-bold tracking-tighter">{goal}</div>
-            <div className="text-[0.70rem] uppercase text-muted-foreground">
+          <div className='flex-1 text-center'>
+            <div className='text-5xl font-bold tracking-tighter'>{goal}</div>
+            <div className='text-[0.70rem] uppercase text-muted-foreground'>
               Calories/day
             </div>
           </div>
           <Button
-            variant="outline"
-            size="icon"
-            className="h-8 w-8 shrink-0 rounded-full"
+            variant='outline'
+            size='icon'
+            className='h-8 w-8 shrink-0 rounded-full'
             onClick={() => onClick(10)}
             disabled={goal >= 400}
           >
-            <Plus className="h-4 w-4" />
-            <span className="sr-only">Increase</span>
+            <Plus className='h-4 w-4' />
+            <span className='sr-only'>Increase</span>
           </Button>
         </div>
-        <div className="my-3 h-[60px]">
-          <ResponsiveContainer width="100%" height="100%">
+        <div className='my-3 h-[60px]'>
+          <ResponsiveContainer width='100%' height='100%'>
             <BarChart data={data}>
               <Bar
-                dataKey="goal"
+                dataKey='goal'
                 style={
                   {
-                    fill: "var(--theme-primary)",
+                    fill: 'var(--theme-primary)',
                     opacity: 0.2,
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
+                    '--theme-primary': `hsl(${
+                      theme?.cssVars[mode === 'dark' ? 'dark' : 'light'].primary
                     })`,
                   } as React.CSSProperties
                 }
@@ -125,7 +125,7 @@ export function CardsActivityGoal() {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Set Goal</Button>
+        <Button className='w-full'>Set Goal</Button>
       </CardFooter>
     </Card>
   )

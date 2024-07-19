@@ -1,35 +1,35 @@
-import { Metadata } from "next"
+import { Metadata } from 'next'
 
-import "@styles/themes.css"
-// import { Announcement } from "@components/announcement"
+import '@styles/themes.css'
+// import { Announcement } from '@components/announcement'
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@components/page-header"
-import { ThemeCustomizer } from "@components/theme-customizer"
-import { ThemeWrapper } from "@components/theme-wrapper"
-import { ThemesTabs } from "@app/themes/tabs"
+} from '@components/page-header'
+import { ThemeCustomizer } from '@components/theme-customizer'
+import { ThemeWrapper } from '@components/theme-wrapper'
+import { ThemesTabs } from '@app/themes/tabs'
 
 export const metadata: Metadata = {
-  title: "Themes",
-  description: "Hand-picked themes that you can copy and paste into your apps.",
+  title: 'Themes',
+  description: 'Hand-picked themes that you can copy and paste into your apps.',
 }
 
 export default function ThemesPage() {
   return (
-    <div className="container">
+    <div className='container'>
       <ThemeWrapper
-        defaultTheme="zinc"
-        className="relative flex w-full flex-col items-start md:flex-row"
+        defaultTheme='zinc'
+        className='relative flex w-full flex-col items-start md:flex-row'
       >
-        <PageHeader className="w-full">
+        <PageHeader className='w-full'>
           {/* <Announcement /> */}
-          <PageHeaderHeading className="hidden md:block">
+          <PageHeaderHeading className='hidden md:block'>
             Add colors. Make it yours.
           </PageHeaderHeading>
-          <PageHeaderHeading className="md:hidden">
+          <PageHeaderHeading className='md:hidden'>
             Make it yours
           </PageHeaderHeading>
           <PageHeaderDescription>

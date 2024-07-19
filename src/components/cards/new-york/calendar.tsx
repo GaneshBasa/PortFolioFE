@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import { addDays } from "date-fns"
+import { addDays } from 'date-fns'
 
-import { Calendar } from "@components/ui/calendar"
-import { Card, CardContent } from "@components/ui/card"
+import { Calendar } from '@components/ui/calendar'
+import { Card, CardContent } from '@components/ui/card'
 
 const start = new Date(2023, 5, 5)
 
 export function CardsCalendar() {
   return (
-    <Card className="max-w-[260px]">
-      <CardContent className="p-1">
+    <Card className='max-w-[260px]'>
+      <CardContent className='p-1'>
         <Calendar
           numberOfMonths={1}
-          mode="range"
+          mode='range'
           defaultMonth={start}
           selected={{
             from: start,

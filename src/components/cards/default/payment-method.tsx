@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Icons } from "@components/icons"
-import { Button } from "@components/ui/button"
+import { Icons } from '@components/icons'
+import { Button } from '@components/ui/button'
 import {
   Card,
   CardContent,
@@ -9,17 +9,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@components/ui/card"
-import { Input } from "@components/ui/input"
-import { Label } from "@components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group"
+} from '@components/ui/card'
+import { Input } from '@components/ui/input'
+import { Label } from '@components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@components/ui/radio-group'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@components/ui/select"
+} from '@components/ui/select'
 
 export function CardsPaymentMethod() {
   return (
@@ -30,31 +30,31 @@ export function CardsPaymentMethod() {
           Add a new payment method to your account.
         </CardDescription>
       </CardHeader>
-      <CardContent className="grid gap-6">
-        <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
+      <CardContent className='grid gap-6'>
+        <RadioGroup defaultValue='card' className='grid grid-cols-3 gap-4'>
           <div>
             <RadioGroupItem
-              value="card"
-              id="card"
-              className="peer sr-only"
-              aria-label="Card"
+              value='card'
+              id='card'
+              className='peer sr-only'
+              aria-label='Card'
             />
             <Label
-              htmlFor="card"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              htmlFor='card'
+              className='flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary'
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="mb-3 h-6 w-6"
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                className='mb-3 h-6 w-6'
               >
-                <rect width="20" height="14" x="2" y="5" rx="2" />
-                <path d="M2 10h20" />
+                <rect width='20' height='14' x='2' y='5' rx='2' />
+                <path d='M2 10h20' />
               </svg>
               Card
             </Label>
@@ -62,76 +62,76 @@ export function CardsPaymentMethod() {
 
           <div>
             <RadioGroupItem
-              value="paypal"
-              id="paypal"
-              className="peer sr-only"
-              aria-label="Paypal"
+              value='paypal'
+              id='paypal'
+              className='peer sr-only'
+              aria-label='Paypal'
             />
             <Label
-              htmlFor="paypal"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              htmlFor='paypal'
+              className='flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary'
             >
-              <Icons.paypal className="mb-3 h-6 w-6" />
+              <Icons.paypal className='mb-3 h-6 w-6' />
               Paypal
             </Label>
           </div>
 
           <div>
             <RadioGroupItem
-              value="apple"
-              id="apple"
-              className="peer sr-only"
-              aria-label="Apple"
+              value='apple'
+              id='apple'
+              className='peer sr-only'
+              aria-label='Apple'
             />
             <Label
-              htmlFor="apple"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+              htmlFor='apple'
+              className='flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary'
             >
-              <Icons.apple className="mb-3 h-6 w-6" />
+              <Icons.apple className='mb-3 h-6 w-6' />
               Apple
             </Label>
           </div>
         </RadioGroup>
-        <div className="grid gap-2">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="First Last" />
+        <div className='grid gap-2'>
+          <Label htmlFor='name'>Name</Label>
+          <Input id='name' placeholder='First Last' />
         </div>
-        <div className="grid gap-2">
-          <Label htmlFor="city">City</Label>
-          <Input id="city" placeholder="" />
+        <div className='grid gap-2'>
+          <Label htmlFor='city'>City</Label>
+          <Input id='city' placeholder='' />
         </div>
-        <div className="grid gap-2">
-          <Label htmlFor="number">Card number</Label>
-          <Input id="number" placeholder="" />
+        <div className='grid gap-2'>
+          <Label htmlFor='number'>Card number</Label>
+          <Input id='number' placeholder='' />
         </div>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="month">Expires</Label>
+        <div className='grid grid-cols-3 gap-4'>
+          <div className='grid gap-2'>
+            <Label htmlFor='month'>Expires</Label>
             <Select>
-              <SelectTrigger id="month" aria-label="Month">
-                <SelectValue placeholder="Month" />
+              <SelectTrigger id='month' aria-label='Month'>
+                <SelectValue placeholder='Month' />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">January</SelectItem>
-                <SelectItem value="2">February</SelectItem>
-                <SelectItem value="3">March</SelectItem>
-                <SelectItem value="4">April</SelectItem>
-                <SelectItem value="5">May</SelectItem>
-                <SelectItem value="6">June</SelectItem>
-                <SelectItem value="7">July</SelectItem>
-                <SelectItem value="8">August</SelectItem>
-                <SelectItem value="9">September</SelectItem>
-                <SelectItem value="10">October</SelectItem>
-                <SelectItem value="11">November</SelectItem>
-                <SelectItem value="12">December</SelectItem>
+                <SelectItem value='1'>January</SelectItem>
+                <SelectItem value='2'>February</SelectItem>
+                <SelectItem value='3'>March</SelectItem>
+                <SelectItem value='4'>April</SelectItem>
+                <SelectItem value='5'>May</SelectItem>
+                <SelectItem value='6'>June</SelectItem>
+                <SelectItem value='7'>July</SelectItem>
+                <SelectItem value='8'>August</SelectItem>
+                <SelectItem value='9'>September</SelectItem>
+                <SelectItem value='10'>October</SelectItem>
+                <SelectItem value='11'>November</SelectItem>
+                <SelectItem value='12'>December</SelectItem>
               </SelectContent>
             </Select>
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="year">Year</Label>
+          <div className='grid gap-2'>
+            <Label htmlFor='year'>Year</Label>
             <Select>
-              <SelectTrigger id="year" aria-label="Year">
-                <SelectValue placeholder="Year" />
+              <SelectTrigger id='year' aria-label='Year'>
+                <SelectValue placeholder='Year' />
               </SelectTrigger>
               <SelectContent>
                 {Array.from({ length: 10 }, (_, i) => (
@@ -142,14 +142,14 @@ export function CardsPaymentMethod() {
               </SelectContent>
             </Select>
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="cvc">CVC</Label>
-            <Input id="cvc" placeholder="CVC" />
+          <div className='grid gap-2'>
+            <Label htmlFor='cvc'>CVC</Label>
+            <Input id='cvc' placeholder='CVC' />
           </div>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Continue</Button>
+        <Button className='w-full'>Continue</Button>
       </CardFooter>
     </Card>
   )
