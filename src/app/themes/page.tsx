@@ -24,7 +24,7 @@ export default function ThemesPage() {
         defaultTheme="zinc"
         className="relative flex w-full flex-col items-start md:flex-row"
       >
-        <PageHeader className="w-full mt-14">
+        <PageHeader className="w-full">
           {/* <Announcement /> */}
           <PageHeaderHeading className="hidden md:block">
             Add colors. Make it yours.
