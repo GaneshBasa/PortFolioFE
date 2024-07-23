@@ -4,6 +4,7 @@ import { FC, useContext, useEffect, useRef } from 'react'
 
 import { sections } from '@common/data'
 import { AppStateContext } from '@context/app-state-provider'
+import { Button } from '@ui/button'
 
 
 const ioOptions : IntersectionObserverInit = {
@@ -47,26 +48,37 @@ const RootPage : FC = () => {
       const iObserver = new IntersectionObserver( ioHandler, ioOptions )
       sectionsRef.current.forEach( sectionRef => iObserver.observe( sectionRef as Element ) )
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [] )
 
   return (
     <>
-    {
-      sections.map( ( section, index ) => (
-        <section
-          key={ index }
-          id={ section.toLowerCase() }
-          ref={ addSectionRef }
-          className='flex min-h-screen'
-        >
-          <div className='text-center m-auto'>
-            <h1 className='text-5xl font-extrabold'>
-              { section }
-            </h1>
-          </div>
-        </section>
-      ) )
-    }
+
+      <section className='flex min-h-screen' ref={ addSectionRef }>
+        <div className='text-center m-auto'>
+          <h1 className='text-5xl font-extrabold text-primary'>
+            Hello, World!
+          </h1>
+        </div>
+      </section>
+
+      {
+        sections.map( ( section, index ) => (
+          <section
+            key={ index }
+            id={ section.toLowerCase() }
+            ref={ addSectionRef }
+            className='flex min-h-screen'
+          >
+            <div className='text-center m-auto'>
+              <h1 className='text-5xl font-extrabold'>
+                Section { section }
+              </h1>
+            </div>
+          </section>
+        ) )
+      }
+      
     </>
   )
 }
