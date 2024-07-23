@@ -3,7 +3,6 @@
 import * as React from 'react'
 
 import { useConfig } from '@hooks/use-config'
-import { ThemeWrapper } from '@components/theme-wrapper'
 import { Skeleton } from '@components/ui/skeleton'
 import CardsDefault from '@components/cards/default'
 import CardsNewYork from '@components/cards/new-york'
@@ -63,10 +62,10 @@ export function ThemesTabs() {
           </div>
         </div>
       ) : (
-        <ThemeWrapper>
+        <>
           {config.style === 'default' && <CardsDefault />}
           {config.style === 'new-york' && <CardsNewYork />}
-        </ThemeWrapper>
+        </>
       )}
     </div>
   )

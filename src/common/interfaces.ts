@@ -1,4 +1,4 @@
-import { PropsWithChildren, ComponentProps } from 'react'
+import { PropsWithChildren } from 'react'
 
 
 export interface BaseAppState {

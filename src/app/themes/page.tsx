@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 
 import '@styles/themes.css'
-// import { Announcement } from '@components/announcement'
 import {
   PageActions,
   PageHeader,
@@ -9,7 +8,6 @@ import {
   PageHeaderHeading,
 } from '@components/page-header'
 import { ThemeCustomizer } from '@components/theme-customizer'
-import { ThemeWrapper } from '@components/theme-wrapper'
 import { ThemesTabs } from '@app/themes/tabs'
 
 export const metadata: Metadata = {
@@ -19,13 +17,9 @@ export const metadata: Metadata = {
 
 export default function ThemesPage() {
   return (
-    <div className='container'>
-      <ThemeWrapper
-        defaultTheme='zinc'
-        className='relative flex w-full flex-col items-start md:flex-row'
-      >
+    <div className='container my-14'>
+      <div className='relative flex w-full flex-col items-start md:flex-row'>
         <PageHeader className='w-full'>
-          {/* <Announcement /> */}
           <PageHeaderHeading className='hidden md:block'>
             Add colors. Make it yours.
           </PageHeaderHeading>
@@ -39,7 +33,7 @@ export default function ThemesPage() {
             {/* <ThemeCustomizer /> */}
           </PageActions>
         </PageHeader>
-      </ThemeWrapper>
+      </div>
       <ThemesTabs />
     </div>
   )

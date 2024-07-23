@@ -7,7 +7,6 @@ import { AppStateContext } from '@context/app-state-provider'
 import { useTheme } from 'next-themes'
 import { useConfig } from '@hooks/use-config'
 import { themes } from '@common/themes'
-import { ThemeWrapper } from '@components/theme-wrapper'
 
 
 const ioOptions : IntersectionObserverInit = {
@@ -65,22 +64,20 @@ const RootPage : FC = () => {
 
       <section className='flex min-h-screen' ref={ addSectionRef }>
         <div className='text-center m-auto'>
-          <ThemeWrapper>
-            <h1
-              className='text-5xl font-extrabold'
-              style={
-                {
-                  stroke: 'var(--theme-primary)',
-                  '--theme-primary': `hsl(${
-                    theme?.cssVars[mode === 'dark' ? 'dark' : 'light']
-                      .primary
-                  })`,
-                } as React.CSSProperties
-              }
-            >
-              Hello, World!
-            </h1>
-          </ThemeWrapper>
+          <h1
+            className='text-5xl font-extrabold'
+            style={
+              {
+                stroke: 'var(--theme-primary)',
+                '--theme-primary': `hsl(${
+                  theme?.cssVars[mode === 'dark' ? 'dark' : 'light']
+                    .primary
+                })`,
+              } as React.CSSProperties
+            }
+          >
+            Hello, World!
+          </h1>
         </div>
       </section>
 
