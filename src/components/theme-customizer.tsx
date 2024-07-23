@@ -10,7 +10,7 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons'
 import template from 'lodash.template'
-import { Paintbrush } from 'lucide-react'
+import { Brush } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 import { cn } from '@lib/utils'
@@ -61,18 +61,21 @@ export function ThemeCustomizer() {
     <div className='flex items-center gap-2'>
       <Drawer>
         <DrawerTrigger asChild>
-          <Button size='sm' className='md:hidden'>
-            Customize
+          <Button variant='outline' size='icon' className='md:hidden bg-transparent'>
+            <Brush />
           </Button>
         </DrawerTrigger>
         <DrawerContent className='p-6 pt-0'>
           <Customizer />
         </DrawerContent>
       </Drawer>
+
       <div className='hidden items-center md:flex'>
         <Popover>
           <PopoverTrigger asChild>
-            <Button size='sm'>Customize</Button>
+            <Button variant='outline' size='icon' className='bg-transparent'>
+              <Brush />
+            </Button>
           </PopoverTrigger>
           <PopoverContent
             align='start'
@@ -153,7 +156,8 @@ export function ThemeCustomizer() {
           )}
         </div>
       </div>
-      <CopyCodeButton variant='ghost' size='sm' className='[&_svg]:hidden' />
+
+      {/* <CopyCodeButton variant='ghost' size='sm' className='[&_svg]:hidden' /> */}
     </div>
   )
 }
@@ -198,6 +202,39 @@ function Customizer() {
         </Button>
       </div>
       <div className='flex flex-1 flex-col space-y-4 md:space-y-6'>
+        <div className='space-y-1.5'>
+          <Label className='text-xs'>Mode</Label>
+          <div className='grid grid-cols-3 gap-2'>
+            {mounted ? (
+              <>
+                <Button
+                  variant={'outline'}
+                  size='sm'
+                  onClick={() => setMode('light')}
+                  className={cn(mode === 'light' && 'border-2 border-primary')}
+                >
+                  <SunIcon className='mr-1 -translate-x-1' />
+                  Light
+                </Button>
+                <Button
+                  variant={'outline'}
+                  size='sm'
+                  onClick={() => setMode('dark')}
+                  className={cn(mode === 'dark' && 'border-2 border-primary')}
+                >
+                  <MoonIcon className='mr-1 -translate-x-1' />
+                  Dark
+                </Button>
+              </>
+            ) : (
+              <>
+                <Skeleton className='h-8 w-full' />
+                <Skeleton className='h-8 w-full' />
+              </>
+            )}
+          </div>
+        </div>
+        
         <div className='space-y-1.5'>
           <div className='flex w-full items-center'>
             <Label className='text-xs'>Style</Label>
@@ -255,6 +292,7 @@ function Customizer() {
             </Button>
           </div>
         </div>
+
         <div className='space-y-1.5'>
           <Label className='text-xs'>Color</Label>
           <div className='grid grid-cols-3 gap-2'>
@@ -299,7 +337,8 @@ function Customizer() {
             })}
           </div>
         </div>
-        <div className='space-y-1.5'>
+
+        {/* <div className='space-y-1.5'>
           <Label className='text-xs'>Radius</Label>
           <div className='grid grid-cols-5 gap-2'>
             {['0', '0.3', '0.5', '0.75', '1.0'].map((value) => {
@@ -324,39 +363,7 @@ function Customizer() {
               )
             })}
           </div>
-        </div>
-        <div className='space-y-1.5'>
-          <Label className='text-xs'>Mode</Label>
-          <div className='grid grid-cols-3 gap-2'>
-            {mounted ? (
-              <>
-                <Button
-                  variant={'outline'}
-                  size='sm'
-                  onClick={() => setMode('light')}
-                  className={cn(mode === 'light' && 'border-2 border-primary')}
-                >
-                  <SunIcon className='mr-1 -translate-x-1' />
-                  Light
-                </Button>
-                <Button
-                  variant={'outline'}
-                  size='sm'
-                  onClick={() => setMode('dark')}
-                  className={cn(mode === 'dark' && 'border-2 border-primary')}
-                >
-                  <MoonIcon className='mr-1 -translate-x-1' />
-                  Dark
-                </Button>
-              </>
-            ) : (
-              <>
-                <Skeleton className='h-8 w-full' />
-                <Skeleton className='h-8 w-full' />
-              </>
-            )}
-          </div>
-        </div>
+        </div> */}
       </div>
     </ThemeWrapper>
   )

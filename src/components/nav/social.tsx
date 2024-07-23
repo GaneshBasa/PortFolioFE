@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 
-import { ModeToggle } from '@components/mode-toggle'
 import { Button } from '@ui/button'
+import { ThemeCustomizer } from '@components/theme-customizer'
 
 
 const SocialNav : FC = () => (
@@ -13,7 +13,9 @@ const SocialNav : FC = () => (
       <GitHubLogoIcon className='absolute h-[1.2rem] w-[1.2rem] transition-all' />
     </Button>
 
-    <ModeToggle />
+    {/* <ModeToggle /> */}
+
+    <ThemeCustomizer />
   </>
 )
 

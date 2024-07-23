@@ -4,6 +4,10 @@ import { FC, useContext, useEffect, useRef } from 'react'
 
 import { sections } from '@common/data'
 import { AppStateContext } from '@context/app-state-provider'
+import { useTheme } from 'next-themes'
+import { useConfig } from '@hooks/use-config'
+import { themes } from '@common/themes'
+import { ThemeWrapper } from '@components/theme-wrapper'
 
 
 const ioOptions : IntersectionObserverInit = {
@@ -15,6 +19,12 @@ const RootPage : FC = () => {
   const { appState, updateState } = useContext( AppStateContext )
 
   const sectionsRef = useRef < ( HTMLElement | null ) [] > ( [] )
+
+  const { theme: mode } = useTheme()
+
+  const [config] = useConfig()
+
+  const theme = themes.find((theme) => theme.name === config.theme)
 
   const addSectionRef = ( sectionRef : HTMLElement | null ) => { if ( sectionRef ) sectionsRef.current.push( sectionRef ) }
 
@@ -54,9 +64,22 @@ const RootPage : FC = () => {
 
       <section className='flex min-h-screen' ref={ addSectionRef }>
         <div className='text-center m-auto'>
-          <h1 className='text-5xl font-extrabold'>
-            Hello, World!
-          </h1>
+          <ThemeWrapper>
+            <h1
+              className='text-5xl font-extrabold'
+              style={
+                {
+                  stroke: 'var(--theme-primary)',
+                  '--theme-primary': `hsl(${
+                    theme?.cssVars[mode === 'dark' ? 'dark' : 'light']
+                      .primary
+                  })`,
+                } as React.CSSProperties
+              }
+            >
+              Hello, World!
+            </h1>
+          </ThemeWrapper>
         </div>
       </section>
 

@@ -36,7 +36,7 @@ export default function ThemesPage() {
             Hand-picked themes that you can copy and paste into your apps.
           </PageHeaderDescription>
           <PageActions>
-            <ThemeCustomizer />
+            {/* <ThemeCustomizer /> */}
           </PageActions>
         </PageHeader>
       </ThemeWrapper>

@@ -9,6 +9,7 @@ import { name } from '@common/data'
 import type { RootLayoutProps } from '@common/interfaces'
 import { ThemeProvider } from '@context/theme-provider'
 import { AppStateProvider } from '@context/app-state-provider'
+import { ThemeWrapper } from '@components/theme-wrapper'
 import SiteHeader from '@components/site-header'
 // import SiteFooter from '@components/site-footer'
 
@@ -46,15 +47,15 @@ const RootLayout : FC<RootLayoutProps> = ({ children }) => (
         disableTransitionOnChange
       >
         <AppStateProvider>
+          <ThemeWrapper>
+            <SiteHeader />
 
-          <SiteHeader />
+            <main className='min-h-screen flex-1'>
+              {children}
+            </main>
 
-          <main className='min-h-screen flex-1'>
-            {children}
-          </main>
-
-          {/* <SiteFooter /> */}
-
+            {/* <SiteFooter /> */}
+          </ThemeWrapper>
         </AppStateProvider>
       </ThemeProvider>
     </body>
