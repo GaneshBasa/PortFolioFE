@@ -87,7 +87,7 @@ export function ThemeCustomizer() {
         <div className='ml-2 hidden items-center gap-0.5'>
           {mounted ? (
             <>
-              {['zinc', 'rose', 'blue', 'green', 'orange'].map((color) => {
+              {['zinc', 'rose', 'blue', 'green', 'orange'].map( ( color, index ) => {
                 const theme = themes.find((theme) => theme.name === color)
                 const isActive = config.theme === color
 
@@ -96,7 +96,7 @@ export function ThemeCustomizer() {
                 }
 
                 return (
-                  <TooltipProvider>
+                  <TooltipProvider key={ index }>
                     <Tooltip key={theme.name}>
                       <TooltipTrigger asChild>
                         <button

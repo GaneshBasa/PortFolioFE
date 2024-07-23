@@ -57,6 +57,7 @@ const RootPage : FC = () => {
       const iObserver = new IntersectionObserver( ioHandler, ioOptions )
       sectionsRef.current.forEach( sectionRef => iObserver.observe( sectionRef as Element ) )
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [] )
 
   return (
