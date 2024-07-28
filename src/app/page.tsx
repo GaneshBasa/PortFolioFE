@@ -1,10 +1,8 @@
 'use client'
 
 import { FC, useContext, useEffect, useRef } from 'react'
-
 import { sections } from '@common/data'
 import { AppStateContext } from '@context/app-state-provider'
-import { Button } from '@ui/button'
 
 
 const ioOptions : IntersectionObserverInit = {
@@ -13,7 +11,7 @@ const ioOptions : IntersectionObserverInit = {
 
 
 const RootPage : FC = () => {
-  const { appState, updateState } = useContext( AppStateContext )
+  const { updateState } = useContext( AppStateContext )
 
   const sectionsRef = useRef < ( HTMLElement | null ) [] > ( [] )
 
