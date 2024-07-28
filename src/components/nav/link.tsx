@@ -2,10 +2,12 @@ import { FC, MouseEventHandler, useContext } from 'react'
 import Link from 'next/link'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
-import { name, sections } from '@common/data'
-import type { NavLinkProps } from '@common/interfaces'
+import { sections } from '@common/data'
+import { name } from '@common/profile'
+import type { NavLinkProps, SocialLinkProps } from '@common/interfaces'
 import { AppStateContext } from '@context/app-state-provider'
 import { cn } from '@lib/utils'
+import { buttonVariants } from '@ui/button'
 
 
 const linkHandler : MouseEventHandler<HTMLAnchorElement> | undefined = ( event ) => {
@@ -42,7 +44,7 @@ const NavLink : FC<NavLinkProps> = ({ target, active, className, children }) => 
 
 
 export const NavLinks : FC = () => {
-  const { appState, updateState } = useContext( AppStateContext )
+  const { appState } = useContext( AppStateContext )
   
   return (
     <>
@@ -72,7 +74,7 @@ export const NavLogo : FC = () => (
       <AvatarFallback>GB</AvatarFallback>
     </Avatar>
     <span className='font-bold md:hidden lg:inline-block' >
-      { name }
+      { name.full }
     </span>
   </NavLink>
 )
