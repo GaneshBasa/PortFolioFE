@@ -1,20 +1,23 @@
 import { FC } from 'react'
-
-import { GitHubLogoIcon } from '@radix-ui/react-icons'
-
-import { Button } from '@ui/button'
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 import { ThemeCustomizer } from '@components/theme-customizer'
+import { linkedin, github } from '@common/profile'
+import { SocialLink } from '@nav/link'
 
 
 const SocialNav : FC = () => (
   <>
-    {/* GitHub Link */}
-    <Button variant='outline' size='icon' className='bg-transparent'>
-      <GitHubLogoIcon className='absolute h-[1.2rem] w-[1.2rem] transition-all' />
-    </Button>
+    {/* LinkedIn */}
+    <SocialLink target={ linkedin.link } name='LinkedIn'>
+      <LinkedInLogoIcon className='size-6' />
+    </SocialLink>
 
-    {/* <ModeToggle /> */}
+    {/* GitHub */}
+    <SocialLink target={ github.link } name='GitHub'>
+      <GitHubLogoIcon className='size-6' />
+    </SocialLink>
 
+    {/* Theme */}
     <ThemeCustomizer />
   </>
 )
