@@ -1,18 +1,16 @@
 import { FC } from 'react'
 import type { Metadata } from 'next'
+import type { RootLayoutProps } from '@common/interfaces'
 import { Inter as FontSans } from 'next/font/google'
-
+import { ThemeProvider } from 'next-themes'
+import { ThemeWrapper } from '@components/theme-wrapper'
+import { AppStateProvider } from '@context/app-state-provider'
+import { cn } from '@lib/utils'
+import { name } from '@common/profile'
+import SiteHeader from '@components/site-header'
+import SiteFooter from '@components/site-footer'
 import '@styles/globals.css'
 import '@styles/themes.css'
-
-import { cn } from '@lib/utils'
-import { name } from '@common/data'
-import type { RootLayoutProps } from '@common/interfaces'
-import { ThemeProvider } from 'next-themes'
-import { AppStateProvider } from '@context/app-state-provider'
-import { ThemeWrapper } from '@components/theme-wrapper'
-import SiteHeader from '@components/site-header'
-// import SiteFooter from '@components/site-footer'
 
 
 const fontSans = FontSans({
@@ -27,9 +25,11 @@ export const metadata : Metadata = {
 }
 
 
-const RootLayout : FC<RootLayoutProps> = ({ children }) => (
+const RootLayout : FC < RootLayoutProps > = ({ children }) => (
   <html lang='en' suppressHydrationWarning>
     <head>
+      <meta name='theme-color' media='(prefers-color-scheme: light)' content='white'/>
+      <meta name='theme-color' media='(prefers-color-scheme: dark)' content='black'/>
       <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png' />
       <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png' />
@@ -42,22 +42,21 @@ const RootLayout : FC<RootLayoutProps> = ({ children }) => (
       ) }
     >
       <ThemeProvider
+        storageKey='mode'
         attribute='class'
         defaultTheme='system'
         enableSystem
         disableTransitionOnChange
       >
-        <AppStateProvider>
-          <ThemeWrapper>
+        <ThemeWrapper>
+          <AppStateProvider>
             <SiteHeader />
-
             <main className='min-h-screen flex-1'>
               {children}
             </main>
-
-            {/* <SiteFooter /> */}
-          </ThemeWrapper>
-        </AppStateProvider>
+            <SiteFooter />
+          </AppStateProvider>
+        </ThemeWrapper>
       </ThemeProvider>
     </body>
   </html>
