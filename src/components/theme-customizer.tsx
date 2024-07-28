@@ -25,8 +25,6 @@ import {
   DrawerTrigger,
 } from '@components/ui/drawer'
 
-import '@styles/mdx.css'
-
 
 export const ThemeCustomizer : FC = () => {
   const [ mobile, setMobile ] = useState < boolean > ()
