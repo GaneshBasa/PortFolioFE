@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@lib/utils'
-import { useConfig } from '@hooks/use-config'
+import { useColor } from '@hooks/use-color'
 
 interface ThemeWrapperProps extends React.ComponentProps<'div'> {
   defaultTheme?: string
@@ -12,19 +12,16 @@ export function ThemeWrapper({
   children,
   className,
 }: ThemeWrapperProps) {
-  const [config] = useConfig()
+  const [ color ] = useColor()
 
   return (
     <div
-      className={cn(
-        `theme-${defaultTheme || config.theme}`,
-        'w-full',
-        className
-      )}
-      style={
-        {
-          '--radius': `${defaultTheme ? 0.5 : config.radius}rem`,
-        } as React.CSSProperties
+      className={
+        cn(
+          `theme-${ defaultTheme || color }`,
+          'w-full',
+          className
+        )
       }
     >
       {children}
