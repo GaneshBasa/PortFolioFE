@@ -2,8 +2,8 @@ const hsl = ( hue: number, saturation: number, lightness: number ) => `hsl( ${ h
 
 export const themes = [
   {
-    name: 'gray',
-    label: 'Gray',
+    name: 'grey',
+    label: 'Grey',
     activeColor: {
       light: hsl( 220, 8.9, 46.1 ),
       dark: hsl( 215, 13.8, 34.1 )

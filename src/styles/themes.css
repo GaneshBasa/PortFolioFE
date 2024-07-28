@@ -1,5 +1,5 @@
 
-.theme-gray {
+.theme-grey {
   --background: hsl( 0, 0%, 100% );
   --foreground: hsl( 224, 71.4%, 4.1% );
 
@@ -30,7 +30,7 @@
   --ring: hsl( 224, 71.4%, 4.1% );
 }
 
-.dark .theme-gray {
+.dark .theme-grey {
   --background: hsl( 224, 71.4%, 4.1% );
   --foreground: hsl( 210, 20%, 98% );
 
