@@ -15,6 +15,13 @@ export interface AppState {
 export interface RootLayoutProps extends PropsWithChildren {}
 
 
+export interface SocialLinkProps extends PropsWithChildren {
+  target: string
+  name: string
+  className?: string
+}
+
+
 export interface NavLinkProps extends PropsWithChildren {
   target: string
   active?: boolean
