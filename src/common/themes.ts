@@ -2,30 +2,6 @@ const hsl = ( hue: number, saturation: number, lightness: number ) => `hsl( ${ h
 
 export const themes = [
   {
-    name: 'zinc',
-    label: 'Zinc',
-    activeColor: {
-      light: hsl( 240, 5.9, 10 ),
-      dark: hsl( 240, 5.2, 33.9 )
-    }
-  },
-  {
-    name: 'slate',
-    label: 'Slate',
-    activeColor: {
-      light: hsl( 215.4, 16.3, 46.9 ),
-      dark: hsl( 215.3, 19.3, 34.5 )
-    }
-  },
-  {
-    name: 'stone',
-    label: 'Stone',
-    activeColor: {
-      light: hsl( 25, 5.3, 44.7 ),
-      dark: hsl( 33.3, 5.5, 32.4 )
-    }
-  },
-  {
     name: 'gray',
     label: 'Gray',
     activeColor: {
