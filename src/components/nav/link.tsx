@@ -23,6 +23,21 @@ const linkHandler : MouseEventHandler<HTMLAnchorElement> | undefined = ( event )
 }
 
 
+export const SocialLink : FC<SocialLinkProps> = ({ target, name, className, children }) => (
+  <Link href={ target } target='_blank'>
+    <div
+      className={ cn(
+        buttonVariants({ variant: 'ghost', size: 'icon' }),
+        'bg-transparent'
+      ) }
+    >
+      { children }
+      <span className='sr-only'>{ name }</span>
+    </div>
+  </Link>
+)
+
+
 const NavLink : FC<NavLinkProps> = ({ target, active, className, children }) => (
   <Link
     target={ target.toLowerCase() }
