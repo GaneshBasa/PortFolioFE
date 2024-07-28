@@ -17,9 +17,9 @@ const linkHandler : MouseEventHandler<HTMLAnchorElement> | undefined = ( event )
 
   target
   ?
-  target.scrollIntoView( { behavior: 'smooth' } )
+  target.scrollIntoView()
   :
-  window.scrollTo( { top: 0, behavior: 'smooth' } )
+  window.scrollTo( { top: 0 } )
 }
 
 
