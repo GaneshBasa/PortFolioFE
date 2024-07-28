@@ -1,7 +1,7 @@
 
 export const sections = [
   // 'Hero',
-  // 'About',
+  'About',
   // 'Resume',
   // 'Approach',
   // 'Projects',
