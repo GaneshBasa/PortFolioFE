@@ -76,7 +76,7 @@ export const ThemeCustomizer : FC = () => {
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent className='p-6 rounded-xl min-w-max'>
+        <PopoverContent className='p-6 rounded-xl w-[400px]'>
 
           <Customizer />
 
@@ -126,36 +126,45 @@ const Customizer : FC = () => {
 
         <Label>Mode</Label>
 
-        <div className='grid grid-cols-3 gap-2 w-[350px]'>
+        <div className='grid grid-cols-3 gap-2'>
 
           <Button
             variant='outline'
             size='sm'
             onClick={ () => setMode( 'light' ) }
-            className={ mode == 'light' ? 'border-2 border-primary' : '' }
+            className={ cn(
+              'px-2.5 justify-between space-x-2.5',
+              mode == 'light' && 'border-2 border-primary'
+            ) }
           >
-            <Sun className='mr-2' />
             Light
+            <Sun className='size-5' />
           </Button>
 
           <Button
             variant='outline'
             size='sm'
             onClick={ () => setMode( 'system' ) }
-            className={ mode == 'system' ? 'border-2 border-primary' : '' }
+            className={ cn(
+              'px-2.5 justify-between space-x-2.5',
+              mode == 'system' && 'border-2 border-primary'
+            ) }
           >
-            <MonitorCog className='mr-2' />
             System
+            <MonitorCog className='size-5' />
           </Button>
 
           <Button
             variant='outline'
             size='sm'
             onClick={ () => setMode( 'dark' ) }
-            className={ mode == 'dark' ? 'border-2 border-primary' : '' }
+            className={ cn(
+              'px-2.5 justify-between space-x-2.5',
+              mode == 'dark' && 'border-2 border-primary'
+            ) }
           >
-            <Moon className='mr-2' />
             Dark
+            <Moon className='size-5' />
           </Button>
 
         </div>
@@ -176,18 +185,18 @@ const Customizer : FC = () => {
               onClick={ () => setColor( theme.name ) }
               style={ { '--theme-primary': theme?.activeColor[ resolvedMode == 'dark' ? 'dark' : 'light' ] } as CSSProperties }
               className={ cn(
-                'px-[5vw] md:px-[1vw] justify-start',
+                'px-2.5 justify-between space-x-2.5',
                 color == theme.name && 'border-2 border-primary'
               ) }
             >
+              { theme.label }
               <span
                 className={ cn(
-                  'mr-2 h-5 w-5 flex items-center justify-center rounded-full bg-[--theme-primary]'
+                  'size-5 flex items-center justify-center rounded-full bg-[--theme-primary]'
                 ) }
               >
                 { color == theme.name && <Check className='h-4 w-4 text-white' /> }
               </span>
-              { theme.label }
             </Button>
           ) )
         }
