@@ -171,7 +171,7 @@ const Customizer : FC = () => {
               size='sm'
               key={ theme.name }
               onClick={ () => setColor( theme.name ) }
-              style={ { '--theme-primary': `hsl( ${ theme?.activeColor[ mode == 'dark' ? 'dark' : 'light' ] } )` } as CSSProperties }
+              style={ { '--theme-primary': theme?.activeColor[ mode == 'dark' ? 'dark' : 'light' ] } as CSSProperties }
               className={ cn(
                 'px-[5vw] md:px-[1vw] justify-start',
                 color == theme.name && 'border-2 border-primary'
