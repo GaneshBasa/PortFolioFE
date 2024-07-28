@@ -1,17 +1,15 @@
 
-export const name = 'Ganesh Basa'
-
 export const sections = [
-  'Hero',
+  // 'Hero',
   'About',
-  'Resume',
-  'Approach',
+  // 'Resume',
+  // 'Approach',
   'Projects',
   'Skills',
   'Technologies',
-  'Testimonials',
-  'Education',
-  'Work Experience',
-  'Contact',
-  'Footer'
+  // 'Testimonials',
+  // 'Education',
+  // 'Work Experience',
+  // 'Contact',
+  // 'Footer'
 ]
