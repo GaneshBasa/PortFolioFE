@@ -1,12 +1,12 @@
 
 export const sections = [
   // 'Hero',
-  'About',
+  // 'About',
   // 'Resume',
   // 'Approach',
-  'Projects',
-  'Skills',
-  'Technologies',
+  // 'Projects',
+  // 'Skills',
+  // 'Technologies',
   // 'Testimonials',
   // 'Education',
   // 'Work Experience',
