@@ -90,7 +90,7 @@ export const ThemeCustomizer : FC = () => {
 
 
 const Customizer : FC = () => {
-  const { theme: mode, setTheme: setMode } = useTheme()
+  const { theme: mode, resolvedTheme: resolvedMode, setTheme: setMode } = useTheme()
   const [ color, setColor ] = useColor()
 
   return (
@@ -111,7 +111,10 @@ const Customizer : FC = () => {
           variant='ghost'
           size='icon'
           className='bg-transparent'
-          onClick={ () => setColor( 'zinc' ) }
+          onClick={ () => {
+            setMode( 'system' )
+            setColor( 'zinc' )
+          } }
         >
           <Reset />
           <span className='sr-only'>Reset</span>
@@ -123,7 +126,7 @@ const Customizer : FC = () => {
 
         <Label>Mode</Label>
 
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='grid grid-cols-3 gap-2 w-[350px]'>
 
           <Button
             variant='outline'
@@ -171,7 +174,7 @@ const Customizer : FC = () => {
               size='sm'
               key={ theme.name }
               onClick={ () => setColor( theme.name ) }
-              style={ { '--theme-primary': theme?.activeColor[ mode == 'dark' ? 'dark' : 'light' ] } as CSSProperties }
+              style={ { '--theme-primary': theme?.activeColor[ resolvedMode == 'dark' ? 'dark' : 'light' ] } as CSSProperties }
               className={ cn(
                 'px-[5vw] md:px-[1vw] justify-start',
                 color == theme.name && 'border-2 border-primary'
