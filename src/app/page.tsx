@@ -70,7 +70,7 @@ const RootPage : FC = () => {
           >
             <div className='text-center m-auto'>
               <h1 className='text-5xl font-extrabold'>
-                Section { section }
+                { section }
               </h1>
             </div>
           </section>
