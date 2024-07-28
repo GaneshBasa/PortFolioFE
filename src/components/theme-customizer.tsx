@@ -3,10 +3,19 @@
 import { useState, useEffect, CSSProperties, FC } from 'react'
 import { useTheme } from 'next-themes'
 import { Cog as Trigger, Moon, Sun, MonitorCog, Undo2 as Reset, Check } from 'lucide-react'
+
 import { cn } from '@lib/utils'
 import { useColor } from '@hooks/use-color'
 import { ThemeWrapper } from '@components/theme-wrapper'
+import { themes } from '@common/themes'
+
 import { Button } from '@components/ui/button'
+import { Label } from '@components/ui/label'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@components/ui/popover'
 import {
   Drawer,
   DrawerContent,
@@ -15,13 +24,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@components/ui/drawer'
-import { Label } from '@components/ui/label'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@components/ui/popover'
-import { themes } from '@common/themes'
 
 import '@styles/mdx.css'
 
