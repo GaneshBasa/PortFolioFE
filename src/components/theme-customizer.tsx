@@ -113,7 +113,7 @@ const Customizer : FC = () => {
           className='bg-transparent'
           onClick={ () => {
             setMode( 'system' )
-            setColor( 'zinc' )
+            setColor( 'neutral' )
           } }
         >
           <Reset />
