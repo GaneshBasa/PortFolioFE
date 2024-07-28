@@ -8,7 +8,7 @@ import { AppStateProvider } from '@context/app-state-provider'
 import { cn } from '@lib/utils'
 import { name } from '@common/profile'
 import SiteHeader from '@components/site-header'
-import SiteFooter from '@components/site-footer'
+// import SiteFooter from '@components/site-footer'
 import '@styles/globals.css'
 import '@styles/themes.css'
 
@@ -54,7 +54,7 @@ const RootLayout : FC < RootLayoutProps > = ({ children }) => (
             <main className='min-h-screen flex-1'>
               {children}
             </main>
-            <SiteFooter />
+            {/* <SiteFooter /> */}
           </AppStateProvider>
         </ThemeWrapper>
       </ThemeProvider>
