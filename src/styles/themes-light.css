@@ -1,4 +1,8 @@
 
+.light .theme-neutral {
+  --primary: black;
+}
+
 .light .theme-slate {
   --primary: hsl(210, 15%, 50%);
 }

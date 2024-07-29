@@ -1,4 +1,8 @@
 
+.dark .theme-neutral {
+  --primary: white;
+}
+
 .dark .theme-slate {
   --primary: hsl(210, 15%, 50%);
 }
