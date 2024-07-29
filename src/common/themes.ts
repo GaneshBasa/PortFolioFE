@@ -15,10 +15,12 @@ export const themes = [
   'Royal',
   'Lavender',
   'Midnight',
+  'Gold',
   'Lime',
   'Aqua',
+  'Amber',
+  'Amethyst',
   'Emerald',
-  'Gold',
 ] as const
 
 export type Theme = ( typeof themes ) [ number ]

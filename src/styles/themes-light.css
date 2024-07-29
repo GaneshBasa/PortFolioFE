@@ -11,10 +11,6 @@
   --primary: hsl(0, 0%, 50%);
 }
 
-.light .theme-gold {
-  --primary: hsl(50, 100%, 50%);
-}
-
 .light .theme-tan {
   --primary: hsl(35, 50%, 70%);
 }
@@ -51,6 +47,18 @@
   --primary: hsl(270, 50%, 45%);
 }
 
+.light .theme-royal {
+  --primary: hsl(219, 85%, 55%);
+}
+
+.light .theme-lavender {
+  --primary: hsl(240, 75%, 75%);
+}
+
+.light .theme-midnight {
+  --primary: hsl(240, 70%, 25%);
+}
+
 .light .theme-lime {
   --primary: hsl(120, 100%, 50%);
 }
@@ -63,14 +71,14 @@
   --primary: hsl(190, 80%, 25%);
 }
 
-.light .theme-royal {
-  --primary: hsl(219, 85%, 55%);
+.light .theme-gold {
+  --primary: hsl(50, 100%, 50%);
 }
 
-.light .theme-lavender {
-  --primary: hsl(240, 75%, 75%);
+.light .theme-amber {
+  --primary: hsl(45, 100%, 50%);
 }
 
-.light .theme-midnight {
-  --primary: hsl(240, 70%, 25%);
+.light .theme-amethyst {
+  --primary: hsl(270, 50%, 60%);
 }
