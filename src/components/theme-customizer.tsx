@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, CSSProperties, FC } from 'react'
+import { useState, useEffect, FC } from 'react'
 import { useTheme } from 'next-themes'
 import { Cog as Trigger, Moon, Sun, MonitorCog, Undo2 as Reset, Check } from 'lucide-react'
 
