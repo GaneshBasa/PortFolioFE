@@ -90,7 +90,7 @@ export const ThemeCustomizer : FC = () => {
 
 
 const Customizer : FC = () => {
-  const { theme: mode, resolvedTheme: resolvedMode, setTheme: setMode } = useTheme()
+  const { theme: mode, setTheme: setMode } = useTheme()
   const [ color, setColor ] = useColor()
 
   return (
@@ -113,7 +113,7 @@ const Customizer : FC = () => {
           className='bg-transparent'
           onClick={ () => {
             setMode( 'system' )
-            setColor( 'neutral' )
+            setColor( themes[ 0 ] )
           } }
         >
           <Reset />
@@ -177,25 +177,21 @@ const Customizer : FC = () => {
 
         <div className='grid grid-cols-3 gap-2'>
         {
-          themes.map( theme => (
+          themes.map( theme =>  (
             <Button
               variant='outline'
               size='sm'
-              key={ theme.name }
-              onClick={ () => setColor( theme.name ) }
-              style={ { '--theme-primary': theme?.activeColor[ resolvedMode == 'dark' ? 'dark' : 'light' ] } as CSSProperties }
+              key={ theme.toLowerCase() }
+              onClick={ () => setColor( theme ) }
               className={ cn(
+                `theme-${ theme.toLowerCase() }`,
                 'px-2.5 justify-between space-x-2.5',
-                color == theme.name && 'border-2 border-primary'
+                color == theme && 'border-2 border-primary'
               ) }
             >
-              { theme.label }
-              <span
-                className={ cn(
-                  'size-5 flex items-center justify-center rounded-full bg-[--theme-primary]'
-                ) }
-              >
-                { color == theme.name && <Check className='h-4 w-4 text-white' /> }
+              { theme }
+              <span className='size-5 flex items-center justify-center rounded-full bg-primary'>
+                { color == theme && <Check className='h-4 w-4 text-background' /> }
               </span>
             </Button>
           ) )
