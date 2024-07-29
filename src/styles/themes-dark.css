@@ -1,0 +1,72 @@
+
+.dark .theme-slate {
+  --primary: hsl(210, 15%, 50%);
+}
+
+.dark .theme-stone {
+  --primary: hsl(0, 0%, 50%);
+}
+
+.dark .theme-gold {
+  --primary: hsl(50, 100%, 50%);
+}
+
+.dark .theme-tan {
+  --primary: hsl(35, 50%, 70%);
+}
+
+.dark .theme-khaki {
+  --primary: hsl(55, 75%, 75%);
+}
+
+.dark .theme-bisque {
+  --primary: hsl(35, 100%, 85%);
+}
+
+.dark .theme-rose {
+  --primary: hsl(345, 75%, 50%);
+}
+
+.dark .theme-coral {
+  --primary: hsl(20, 100%, 60%);
+}
+
+.dark .theme-salmon {
+  --primary: hsl(5, 100%, 70%);
+}
+
+.dark .theme-peach {
+  --primary: hsl(0, 85%, 75%);
+}
+
+.dark .theme-orchid {
+  --primary: hsl(302, 100%, 65%);
+}
+
+.dark .theme-rebecca {
+  --primary: hsl(270, 50%, 45%);
+}
+
+.dark .theme-lime {
+  --primary: hsl(120, 100%, 50%);
+}
+
+.dark .theme-aqua {
+  --primary: hsl(180, 100%, 50%);
+}
+
+.dark .theme-emerald {
+  --primary: hsl(190, 80%, 25%);
+}
+
+.dark .theme-royal {
+  --primary: hsl(219, 85%, 55%);
+}
+
+.dark .theme-lavender {
+  --primary: hsl(240, 75%, 75%);
+}
+
+.dark .theme-midnight {
+  --primary: hsl(240, 70%, 25%);
+}
