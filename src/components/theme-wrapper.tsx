@@ -18,7 +18,7 @@ export function ThemeWrapper({
     <div
       className={
         cn(
-          `theme-${ defaultTheme || color }`,
+          `theme-${ defaultTheme || color.toLowerCase() }`,
           'w-full',
           className
         )
