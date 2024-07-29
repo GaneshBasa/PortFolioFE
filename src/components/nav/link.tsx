@@ -50,7 +50,7 @@ const NavLink : FC<NavLinkProps> = ({ target, active, className, children }) => 
       :
       cn(
       'transition-colors hover:text-primary',
-      active ? 'text-foreground' : 'text-muted-foreground'
+      active ? 'text-primary' : 'text-muted-foreground'
     ) }
   >
     { children }
