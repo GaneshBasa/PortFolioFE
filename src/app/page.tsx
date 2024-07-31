@@ -23,7 +23,7 @@ const RootPage : FC = () => {
 
     if ( hash ) {
       const newHash = `#${ hash }`
-  
+
       if ( newHash != oldHash ) {
         updateState( { activeSection: hash } )
         history.replaceState( null, '', location + newHash )
@@ -46,7 +46,7 @@ const RootPage : FC = () => {
       const iObserver = new IntersectionObserver( ioHandler, ioOptions )
       sectionsRef.current.forEach( sectionRef => iObserver.observe( sectionRef as Element ) )
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [] )
 
   return (
@@ -64,19 +64,25 @@ const RootPage : FC = () => {
         sections.map( ( section, index ) => (
           <section
             key={ index }
-            id={ section.toLowerCase() }
+            id={ section.name }
             ref={ addSectionRef }
             className='flex min-h-screen'
           >
+          {
+            section.component
+            ?
+            <section.component />
+            :
             <div className='text-center m-auto'>
               <h1 className='text-5xl font-extrabold'>
-                { section }
+                Section { section.label } [ W I P ]
               </h1>
             </div>
+          }
           </section>
         ) )
       }
-      
+
     </>
   )
 }
