@@ -6,7 +6,7 @@ import { SocialLink } from '@nav/link'
 
 
 const SocialNav : FC = () => (
-  <>
+  <div>
     {/* LinkedIn */}
     <SocialLink target={ linkedin.link } name='LinkedIn'>
       <LinkedInLogoIcon className='size-6' />
@@ -19,7 +19,7 @@ const SocialNav : FC = () => (
 
     {/* Theme */}
     <ThemeCustomizer />
-  </>
+  </div>
 )
 
 

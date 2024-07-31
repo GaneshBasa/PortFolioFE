@@ -40,8 +40,8 @@ export const SocialLink : FC<SocialLinkProps> = ({ target, name, className, chil
 
 const NavLink : FC<NavLinkProps> = ({ target, active, className, children }) => (
   <Link
-    target={ target.toLowerCase() }
-    href={ `#${target.toLowerCase()}` }
+    target={ target }
+    href={ '#' + target }
     onClick={ linkHandler }
     className={ 
       className
@@ -67,10 +67,10 @@ export const NavLinks : FC = () => {
       sections.map( ( section, index ) => (
         <NavLink
         key={ index }
-        target={ section }
-        active={ appState.activeSection == section.toLowerCase() }
+        target={ section.name }
+        active={ appState.activeSection == section.name }
         >
-          { section }
+          { section.label }
         </NavLink>
       ) )
     }
@@ -82,13 +82,13 @@ export const NavLinks : FC = () => {
 export const NavLogo : FC = () => (
   <NavLink
     target='/'
-    className='flex items-center max-w-fit space-x-2 md:mr-4 lg:mr-6'
+    className='flex items-center space-x-2'
   >
     <Avatar>
       <AvatarImage src='https://github.com/GaneshBasa.png' />
       <AvatarFallback>GB</AvatarFallback>
     </Avatar>
-    <span className='font-bold md:hidden lg:inline-block' >
+    <span className='text-base font-bold md:hidden lg:inline-block' >
       { name.full }
     </span>
   </NavLink>

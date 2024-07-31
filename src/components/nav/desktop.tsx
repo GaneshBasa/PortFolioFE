@@ -5,14 +5,9 @@ import { NavLogo, NavLinks } from '@nav/link'
 
 
 const DesktopNav : FC = () => (
-  <div className='hidden md:flex'>
-
+  <div className='hidden md:flex items-center gap-2 md:gap-4 lg:gap-6 text-sm'>
     <NavLogo />
-
-    <div className='flex items-center gap-4 text-sm lg:gap-6'>
-      <NavLinks />
-    </div>
-
+    <NavLinks />
   </div>
 )
 

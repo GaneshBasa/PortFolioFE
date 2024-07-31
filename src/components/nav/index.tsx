@@ -1,28 +1,19 @@
 import { FC } from 'react'
 
-import DesktopNav from '@src/components/nav/desktop'
-import MobileNav from '@src/components/nav/mobile'
-import SocialNav from '@src/components/nav/social'
+import DesktopNav from '@nav/desktop'
+import MobileNav from '@nav/mobile'
+import SocialNav from '@nav/social'
 
 
-const Nav : FC = () => {
-  return (
-    <>
-      <nav className='flex items-center justify-between h-14'>
-
-        <div className='flex'>
-          <DesktopNav />
-          <MobileNav />
-        </div>
-
-        <div className='flex items-center'>
-          <SocialNav />
-        </div>
-        
-      </nav>
-    </>
+const Nav : FC = () => (
+    <nav className='flex items-center justify-between h-14'>
+      <div>
+        <DesktopNav />
+        <MobileNav />
+      </div>
+      <SocialNav />
+    </nav>
   )
-}
 
 
 export default Nav
