@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, FC } from 'react'
+import { FC } from 'react'
 import { useTheme } from 'next-themes'
 import { Cog as Trigger, Moon, Sun, MonitorCog, Undo2 as Reset, Check } from 'lucide-react'
 
@@ -9,13 +9,13 @@ import { useColor } from '@hooks/use-color'
 import { ThemeWrapper } from '@components/theme-wrapper'
 import { themes } from '@common/themes'
 
-import { Button } from '@components/ui/button'
-import { Label } from '@components/ui/label'
+import { Button } from '@ui/button'
+import { Label } from '@ui/label'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@components/ui/popover'
+} from '@ui/popover'
 import {
   Drawer,
   DrawerContent,
@@ -23,30 +23,30 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@components/ui/drawer'
+} from '@ui/drawer'
 
 
-export const ThemeCustomizer : FC = () => {
-  const [ mobile, setMobile ] = useState < boolean > ()
+export const ThemeCustomizer : FC = () => (
+  <>
+    <div className='hidden sm:inline-block'>
+      <Popover>
 
-  const deviceTest = ( event : MediaQueryListEvent ) =>  setMobile( event.matches )
+        <PopoverTrigger asChild>
+          <Button variant='ghost' size='icon' className='bg-transparent'>
+            <Trigger />
+          </Button>
+        </PopoverTrigger>
 
-  useEffect( () => {
-    const MQL = window.matchMedia( '(max-width: 768px)' )
+        <PopoverContent className='p-6 rounded-xl w-[400px]'>
 
-    setMobile( MQL.matches )
+          <Customizer />
 
-    MQL.addEventListener( 'change', deviceTest )
+        </PopoverContent>
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [] )
+      </Popover>
+    </div>
 
-
-  return (
-    <>
-    {
-      mobile
-      ?
+    <div className='inline-block md:hidden'>
       <Drawer>
 
         <DrawerTrigger asChild>
@@ -67,26 +67,9 @@ export const ThemeCustomizer : FC = () => {
         </DrawerContent>
 
       </Drawer>
-      :
-      <Popover>
-
-        <PopoverTrigger asChild>
-          <Button variant='ghost' size='icon' className='bg-transparent'>
-            <Trigger />
-          </Button>
-        </PopoverTrigger>
-
-        <PopoverContent className='p-6 rounded-xl w-[400px]'>
-
-          <Customizer />
-
-        </PopoverContent>
-
-      </Popover>
-    }
-    </>
-  )
-}
+    </div>
+  </>
+)
 
 
 const Customizer : FC = () => {
