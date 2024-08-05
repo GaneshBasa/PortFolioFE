@@ -54,9 +54,9 @@ const RootPage : FC = () => {
     <>
 
       <section className='flex min-h-screen' ref={ addSectionRef }>
-        <div className='m-auto flex text-center items-center space-x-2'>
+        <div className='m-auto flex text-center items-center space-x-2 text-primary'>
           <Construction className='size-12' />
-          <h1 className='text-5xl font-extrabold text-primary'>
+          <h1 className='text-5xl font-extrabold'>
             Site Under Construction !
           </h1>
         </div>
