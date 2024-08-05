@@ -1,6 +1,7 @@
 'use client'
 
 import { FC, useContext, useEffect, useRef } from 'react'
+import { Construction } from 'lucide-react'
 import { sections } from '@common/data'
 import { AppStateContext } from '@context/app-state-provider'
 
@@ -53,35 +54,13 @@ const RootPage : FC = () => {
     <>
 
       <section className='flex min-h-screen' ref={ addSectionRef }>
-        <div className='text-center m-auto'>
+        <div className='m-auto flex text-center items-center space-x-2'>
+          <Construction className='size-12' />
           <h1 className='text-5xl font-extrabold text-primary'>
-            Hello, World!
+            Site Under Construction !
           </h1>
         </div>
       </section>
-
-      {
-        sections.map( ( section, index ) => (
-          <section
-            key={ index }
-            id={ section.name }
-            ref={ addSectionRef }
-            className='flex min-h-screen'
-          >
-          {
-            section.component
-            ?
-            <section.component />
-            :
-            <div className='text-center m-auto'>
-              <h1 className='text-5xl font-extrabold'>
-                Section { section.label } [ W I P ]
-              </h1>
-            </div>
-          }
-          </section>
-        ) )
-      }
 
     </>
   )
